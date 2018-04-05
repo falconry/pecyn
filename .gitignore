@@ -1,0 +1,53 @@
+# C extensions
+*.c
+*.so
+
+# Build artifacts
+*.egg
+*.egg-info
+*.py[cod]
+.eggs
+.installed.cfg
+build
+develop-eggs
+dist
+eggs
+lib
+lib64
+parts
+sdist
+var
+
+# Installer logs
+pip-log.txt
+
+# Test artifacts
+*.dat
+.cache
+.coverage*
+.ecosystem
+.tox
+.pytest_cache
+htmlcov
+
+# Docs
+docs/_build
+
+# Translations
+*.mo
+
+# Idea
+.idea
+
+# System
+.DS_Store
+
+# VIM swap files
+.*.swp
+
+# VIM temp files
+*~
+
+# VSCode
+
+.vscode
