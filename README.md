@@ -1,6 +1,6 @@
 ## Pecyn
 
-Simple, fast, and compact Python object serialization for humans.
+Simple, fast, compact Python object serialization for humans.
 
 __EXPERIMENTAL__: Use at your own risk.
 
