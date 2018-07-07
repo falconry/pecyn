@@ -9,11 +9,11 @@ Requires Python 3.5 or better.
 Legal
 -----
 
-Copyright 2018 by Individual and corporate contributors as
+Copyright 2018 by individual and corporate contributors as
 noted in the individual source files.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may
-not use any portion of the Falcon framework except in compliance with
+not use any portion of this software except in compliance with
 the License. Contributors agree to license their work under the same
 License. You may obtain a copy of the License at
 http://www.apache.org/licenses/LICENSE-2.0
