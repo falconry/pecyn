@@ -84,7 +84,7 @@ def packb(doc, compress=None):
     """
 
     flags = _FLAG_MSGPACK
-    blob = msgpack.packb(doc, encoding='utf-8', use_bin_type=True)
+    blob = msgpack.packb(doc, use_bin_type=True)
     if compress:
         blob = gzip.compress(blob, _GZIP_COMPRESSION_LEVEL)
         flags |= _FLAG_GZIP
@@ -120,4 +120,4 @@ def unpackb(record):
     if not (flags & _FLAG_MSGPACK):
         raise ValueError('Unsupported document format: {}'.format(flags))
 
-    return msgpack.unpackb(blob, encoding='utf-8')
+    return msgpack.unpackb(blob, raw=False)
