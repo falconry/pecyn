@@ -7,7 +7,7 @@ VERSION = imp.load_source('version', path.join('.', 'pecyn', 'version.py'))
 VERSION = VERSION.__version__
 
 REQUIRES = [
-    'msgpack',
+    'msgpack>=0.6.1',
 ]
 
 

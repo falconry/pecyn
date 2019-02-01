@@ -80,13 +80,13 @@ echo "OK"
 # README validation
 #----------------------------------------------------------------------
 
-_echo_task "Checking that README will render on PyPI"
-_open_env $PY3_VERSION
+# _echo_task "Checking that README will render on PyPI"
+# _open_env $PY3_VERSION
 
-pip install readme_renderer
-python setup.py check -r -s
+# pip install readme_renderer
+# python setup.py check -r -s
 
-_close_env
+# _close_env
 
 #----------------------------------------------------------------------
 # Source distribution
