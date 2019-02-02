@@ -105,12 +105,15 @@ def unpackb(record):
         doc: Deserialized JSON-compatible object.
     """
 
-    header_block = record[:_HEADER_BLOCK_SIZE]
+    if len(record) < _HEADER_BLOCK_SIZE:
+        raise ValueError('Invalid header block')
 
-    if header_block[0] != _PACK_VERSION:
-        raise ValueError('Unsupported pack version: {}'.format(header_block[0]))
+    # NOTE(kgriffs): Use struct.unpack because it works correctly with
+    #   memoryview as well as bytes
+    version, flags = struct.unpack('BB', record[:_HEADER_BLOCK_SIZE])
 
-    flags = header_block[1]
+    if version != _PACK_VERSION:
+        raise ValueError('Unsupported pack version: {} != {}'.format(version, _PACK_VERSION))
 
     if (flags & _FLAG_GZIP):
         blob = gzip.decompress(record[_HEADER_BLOCK_SIZE:])
