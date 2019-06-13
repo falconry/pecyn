@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from base64 import b64decode, b64encode
+from binascii import a2b_base64, b2a_base64
 import gzip
 import struct
 
@@ -52,7 +52,7 @@ def pack(doc, compress=None):
         str: Serialized document.
     """
 
-    return b64encode(packb(doc, compress=compress)).decode()
+    return b2a_base64(packb(doc, compress=compress), newline=False).decode()
 
 
 def unpack(record):
@@ -65,7 +65,7 @@ def unpack(record):
         doc: Deserialized JSON-compatible object.
     """
 
-    return unpackb(b64decode(record))
+    return unpackb(a2b_base64(record))
 
 
 def packb(doc, compress=None):
